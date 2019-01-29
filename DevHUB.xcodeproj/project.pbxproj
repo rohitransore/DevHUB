@@ -13,6 +13,7 @@
 		26BE674021FF3AC000BBC446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BE673F21FF3AC000BBC446 /* Assets.xcassets */; };
 		26BE674321FF3AC000BBC446 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BE674121FF3AC000BBC446 /* LaunchScreen.storyboard */; };
 		26BE674B21FF3C6A00BBC446 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26BE674A21FF3C6A00BBC446 /* GoogleService-Info.plist */; };
+		26BE674D21FF61C000BBC446 /* SignupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE674C21FF61C000BBC446 /* SignupPage.swift */; };
 		82E16E74D7D42DD30775EA3B /* Pods_DevHUB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266E5EF1C98EE48627F1AE19 /* Pods_DevHUB.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		26BE674221FF3AC000BBC446 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26BE674421FF3AC000BBC446 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26BE674A21FF3C6A00BBC446 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26BE674C21FF61C000BBC446 /* SignupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPage.swift; sourceTree = "<group>"; };
 		9AB36DF5C7FE693796820BF2 /* Pods-DevHUB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevHUB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevHUB/Pods-DevHUB.release.xcconfig"; sourceTree = "<group>"; };
 		F14D87587A01465030173EE8 /* Pods-DevHUB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevHUB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevHUB/Pods-DevHUB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				26BE674121FF3AC000BBC446 /* LaunchScreen.storyboard */,
 				26BE674421FF3AC000BBC446 /* Info.plist */,
 				26BE674A21FF3C6A00BBC446 /* GoogleService-Info.plist */,
+				26BE674C21FF61C000BBC446 /* SignupPage.swift */,
 			);
 			path = DevHUB;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				26BE673B21FF3ABF00BBC446 /* ViewController.swift in Sources */,
 				26BE673921FF3ABF00BBC446 /* AppDelegate.swift in Sources */,
+				26BE674D21FF61C000BBC446 /* SignupPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

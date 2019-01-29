@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController
 {
@@ -22,8 +23,8 @@ class ViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         
         //Getting Underline below Text Fields
-        configureTextField(x: 0, y: EmailTextFieldOutlet.frame.size.height-1.0, width: EmailTextFieldOutlet.frame.size.width, height:1.0, textField: EmailTextFieldOutlet)
-        configureTextField(x: 0, y: PasswordTextFieldOutlet.frame.size.height-1.0, width: PasswordTextFieldOutlet.frame.size.width, height:1.0, textField: PasswordTextFieldOutlet)
+      //  configureTextField(x: 0, y: EmailTextFieldOutlet.frame.size.height-1.0, width: EmailTextFieldOutlet.frame.size.width, height:1.0, textField: EmailTextFieldOutlet)
+       // configureTextField(x: 0, y: PasswordTextFieldOutlet.frame.size.height-1.0, width: PasswordTextFieldOutlet.frame.size.width, height:1.0, textField: PasswordTextFieldOutlet)
     }
     
     //Configureing text field and putting underlines
@@ -36,10 +37,44 @@ class ViewController: UIViewController
         bottomLine.backgroundColor = UIColor.lightGray.cgColor
         textField.borderStyle = UITextField.BorderStyle.none
         textField.layer.addSublayer(bottomLine)
-        
-        
     }
-
+    
+    //Login user with Firebase
+    @IBAction func LoginBtn(_ sender: UIButton)
+    {
+        
+        if let email = EmailTextFieldOutlet.text, let pass = PasswordTextFieldOutlet.text
+        {
+            Auth.auth().signIn(withEmail: email, password: pass)
+            { (result, error) in
+                
+                //check user is not nil
+                if result != nil
+                {
+                    //Result
+                    self.performSegue(withIdentifier: "GoToHome2", sender: self)
+                }
+                else
+                {
+                    //Error
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+    
+    //NewUser Button
+    @IBAction func NewUserButton(_ sender: Any)
+    {
+        performSegue(withIdentifier: "GoToSignupPage", sender: self)
+    }
+    
+    
+    
+    
 
 }
 
