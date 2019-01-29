@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CR3-wH-B5M">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -79,22 +79,23 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="LoginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fI7-6L-fhe"/>
+                                    <segue destination="CR3-wH-B5M" kind="show" identifier="GoToHome2" id="CKE-X1-UQB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mqo-l9-mwr"/>
                     <connections>
                         <outlet property="EmailTextFieldOutlet" destination="OgD-d2-XLm" id="0wj-Xp-PGC"/>
                         <outlet property="PasswordTextFieldOutlet" destination="X4i-wl-fJ7" id="6eb-cf-4t8"/>
                         <segue destination="XKG-Qa-O6c" kind="show" identifier="GoToSignupPage" id="fFX-1K-NWT"/>
-                        <segue destination="CR3-wH-B5M" kind="show" identifier="GoToHome2" id="X2d-XK-Ocd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+            <point key="canvasLocation" x="1932" y="27.436281859070466"/>
         </scene>
         <!--Signup Page-->
         <scene sceneID="xsk-jU-dj9">
@@ -104,13 +105,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-DB-6Gr">
-                                <rect key="frame" x="89" y="100" width="196" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" placeholder="Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hi5-4e-jfy">
                                 <rect key="frame" x="50" y="240" width="275" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,6 +135,24 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ide-sY-pjy">
+                                <rect key="frame" x="319" y="29" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="74K-cI-8La"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCi-DB-6Gr">
+                                <rect key="frame" x="89" y="100" width="196" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xwm-7a-OUd"/>
@@ -148,30 +160,117 @@
                     <connections>
                         <outlet property="EmailTextFieldForNewUser" destination="Hi5-4e-jfy" id="xXT-XQ-5by"/>
                         <outlet property="PasswordTextFieldForNewUser" destination="bNp-OE-t5H" id="ftE-7h-H9R"/>
-                        <segue destination="CR3-wH-B5M" kind="show" identifier="GoToHome" id="yMv-Me-mND"/>
+                        <segue destination="CR3-wH-B5M" kind="show" identifier="GoToHome" id="tgY-ZR-9EV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KA-y3-ZCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="-189"/>
+            <point key="canvasLocation" x="2876" y="-189.3553223388306"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="Qdc-H1-xWY">
             <objects>
-                <viewController id="CR3-wH-B5M" sceneMemberID="viewController">
+                <viewController id="CR3-wH-B5M" customClass="HomeViewController" customModule="DevHUB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p33-9T-Vn2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-on-dY2">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="DevHUB" id="wmR-vX-egU"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iOM-za-wRv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mycell" rowHeight="175" id="Trr-j6-a63" customClass="HomeTableViewCell" customModule="DevHUB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="175"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Trr-j6-a63" id="FCr-m2-6hV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rohit Ransore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1h-it-N4E">
+                                                    <rect key="frame" x="82" y="12" width="102" height="18"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liz-zJ-G7Y">
+                                                    <rect key="frame" x="75" y="36" width="284" height="78"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">How can I use google firebase in my app? the working of the app is simple user can post questions online and other users ... can provide answers.</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6J-If-KZ7">
+                                                    <rect key="frame" x="12" y="12" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="aQ4-KW-IMi"/>
+                                                        <constraint firstAttribute="width" constant="50" id="uyE-YM-ppN"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="liz-zJ-G7Y" firstAttribute="leading" secondItem="W6J-If-KZ7" secondAttribute="trailing" constant="13" id="4gy-Sh-Ow6"/>
+                                                <constraint firstItem="liz-zJ-G7Y" firstAttribute="top" secondItem="r1h-it-N4E" secondAttribute="bottom" constant="6" id="6tA-ZV-CCT"/>
+                                                <constraint firstItem="r1h-it-N4E" firstAttribute="top" secondItem="FCr-m2-6hV" secondAttribute="topMargin" constant="1" id="MJZ-P9-xNV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="liz-zJ-G7Y" secondAttribute="bottom" constant="50" id="R67-Wj-bt1"/>
+                                                <constraint firstItem="r1h-it-N4E" firstAttribute="leading" secondItem="W6J-If-KZ7" secondAttribute="trailing" constant="20" id="SVU-fM-OA9"/>
+                                                <constraint firstItem="W6J-If-KZ7" firstAttribute="leading" secondItem="FCr-m2-6hV" secondAttribute="leading" constant="12" id="WSf-Pb-aUs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="liz-zJ-G7Y" secondAttribute="trailing" constant="1" id="mNa-pc-JKS"/>
+                                                <constraint firstItem="W6J-If-KZ7" firstAttribute="top" secondItem="FCr-m2-6hV" secondAttribute="top" constant="12" id="rVI-d6-aSE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="NameTextLabel" destination="r1h-it-N4E" id="22Y-3y-bxH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CR3-wH-B5M" id="XVf-5P-t3T"/>
+                                    <outlet property="delegate" destination="CR3-wH-B5M" id="4EL-Ft-2eH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EMa-on-dY2" firstAttribute="trailing" secondItem="iOM-za-wRv" secondAttribute="trailing" id="EZD-O0-rSL"/>
+                            <constraint firstItem="iOM-za-wRv" firstAttribute="bottom" secondItem="ahs-Yg-ikC" secondAttribute="bottom" id="P8r-fJ-ITf"/>
+                            <constraint firstItem="EMa-on-dY2" firstAttribute="top" secondItem="ahs-Yg-ikC" secondAttribute="top" id="UMl-gT-Wun"/>
+                            <constraint firstItem="iOM-za-wRv" firstAttribute="trailing" secondItem="ahs-Yg-ikC" secondAttribute="trailing" id="Zdu-np-qon"/>
+                            <constraint firstItem="iOM-za-wRv" firstAttribute="leading" secondItem="ahs-Yg-ikC" secondAttribute="leading" id="kn9-0e-4kJ"/>
+                            <constraint firstItem="EMa-on-dY2" firstAttribute="leading" secondItem="iOM-za-wRv" secondAttribute="leading" id="lJB-VW-kEs"/>
+                            <constraint firstItem="iOM-za-wRv" firstAttribute="top" secondItem="EMa-on-dY2" secondAttribute="bottom" id="y8d-y7-HhC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ahs-Yg-ikC"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gyp-ub-Mhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="512"/>
+            <point key="canvasLocation" x="2901.5999999999999" y="739.88005997001505"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eOt-m6-10a">
+            <objects>
+                <viewController id="8cr-rX-Epe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hNg-Fj-wYw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="E7t-Gp-ATO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hn8-JA-T7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4054" y="425"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yMv-Me-mND"/>
+        <segue reference="74K-cI-8La"/>
+        <segue reference="CKE-X1-UQB"/>
     </inferredMetricsTieBreakers>
 </document>

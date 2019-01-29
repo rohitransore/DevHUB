@@ -22,8 +22,9 @@ class SignupPage: ViewController
         // Do any additional setup after loading the view.
         
 //        configureTextField(x: 0, y: EmailTextFieldForNewUser.frame.size.height-1.0, width: EmailTextFieldOutlet.frame.size.width, height:1.0, textField: EmailTextFieldForNewUser)
-    //    configureTextField(x: 0, y: PasswordTextFieldForNewUser.frame.size.height-1.0, width: PasswordTextFieldOutlet.frame.size.width, height:1.0, textField: PasswordTextFieldForNewUser)
+//        configureTextField(x: 0, y: PasswordTextFieldForNewUser.frame.size.height-1.0, width: PasswordTextFieldOutlet.frame.size.width, height:1.0, textField: PasswordTextFieldForNewUser)
     }
+    
     
     
     
