@@ -43,23 +43,29 @@ class ViewController: UIViewController
     @IBAction func LoginBtn(_ sender: UIButton)
     {
         
-        if let email = EmailTextFieldOutlet.text, let pass = PasswordTextFieldOutlet.text
+        if EmailTextFieldOutlet.text != nil, PasswordTextFieldOutlet.text != nil
         {
-            Auth.auth().signIn(withEmail: email, password: pass)
+            Auth.auth().signIn(withEmail: EmailTextFieldOutlet.text!, password: PasswordTextFieldOutlet.text!)
             { (result, error) in
                 
                 //check user is not nil
                 if result != nil
                 {
                     //Result
-                    self.performSegue(withIdentifier: "GoToHome2", sender: self)
+                    print("User Logged in")
+                    self.performSegue(withIdentifier: "GoToHome", sender: self)
                 }
                 else
                 {
                     //Error
+                    print("error finding user")
                 }
             }
             
+        }
+        else
+        {
+            print("Fields are empty")
         }
     }
     
