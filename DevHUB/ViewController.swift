@@ -27,6 +27,14 @@ class ViewController: UIViewController
 //        configureTextField(x: 0, y: PasswordTextFieldOutlet.frame.size.height-1.0, width: PasswordTextFieldOutlet.frame.size.width, height:1.0, textField: PasswordTextFieldOutlet)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let user = Auth.auth().currentUser {
+            self.performSegue(withIdentifier: "GoToHome", sender: self)
+        }
+    }
+    
     //Configureing text field and putting underlines
     func configureTextField(x:CGFloat,y:CGFloat,width:CGFloat,height:CGFloat,textField:UITextField)
         
@@ -53,6 +61,7 @@ class ViewController: UIViewController
                 {
                     //Result
                     print("User Logged in")
+                    
                     self.performSegue(withIdentifier: "GoToHome", sender: self)
                 }
                 else

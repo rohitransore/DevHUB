@@ -11,13 +11,18 @@ import UIKit
 class HomeTableViewCell: UITableViewCell
 {
     @IBOutlet weak var NameTextLabel: UILabel!
+    @IBOutlet weak var QuestionPreviewTextField: UITextView!
     
+    
+    @IBOutlet weak var ImageView: UIImageView!
     
     
     
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        self.ImageView.layer.cornerRadius = self.ImageView.frame.size.width / 2;
+        self.ImageView.clipsToBounds = true;
         // Initialization code
     }
 
@@ -26,6 +31,13 @@ class HomeTableViewCell: UITableViewCell
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func set(post: Post)
+    {
+        NameTextLabel.text = post.author.username
+        QuestionPreviewTextField.text = post.text
+        
     }
 
 }

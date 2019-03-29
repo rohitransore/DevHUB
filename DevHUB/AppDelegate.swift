@@ -20,6 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
+        
+        _ = Auth.auth().addStateDidChangeListener { auth, user in
+            
+            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if user != nil
+            {
+                UserService.observeUserProfile(user!.uid) { userProfile in
+                    UserService.currentUserProfile = userProfile
+                }
+            } else
+            {
+                UserService.currentUserProfile = nil
+                
+            }
+        }
+        
         return true
     }
 

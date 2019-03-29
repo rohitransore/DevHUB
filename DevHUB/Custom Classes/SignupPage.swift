@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignupPage: ViewController
 {
@@ -45,9 +46,17 @@ class SignupPage: ViewController
                     
                      let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = self.UserName.text!
+                    
                      changeRequest?.commitChanges(completion: { error in
                      if error == nil
                      {
+                     
+                        self.saveProfile(username: self.UserName.text!) { success in
+                            if success {
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                        }
+ 
                      print("Username Comitted")
                      }
                      else
@@ -64,6 +73,19 @@ class SignupPage: ViewController
                 }
             }
         
+        }
+    }
+    
+    func saveProfile(username:String, completion: @escaping ((_ success:Bool)->())) {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let databaseRef = Database.database().reference().child("users/profile/\(uid)")
+        
+        let userObject = [
+            "username": username
+            ] as [String:Any]
+        
+        databaseRef.setValue(userObject) { error, ref in
+            completion(error == nil)
         }
     }
     
