@@ -274,13 +274,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="liz-zJ-G7Y">
-                                                    <rect key="frame" x="75" y="36" width="284" height="83"/>
-                                                    <color key="backgroundColor" red="0.0016834623899999999" green="0.1384600168" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <string key="text">How can I use google firebase in my app? the working of the app is simple user can post questions online and other users ... can provide answers.</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6J-If-KZ7">
                                                     <rect key="frame" x="12" y="12" width="50" height="50"/>
                                                     <constraints>
@@ -288,23 +281,29 @@
                                                         <constraint firstAttribute="width" constant="50" id="uyE-YM-ppN"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rr5-Ns-sZp">
+                                                    <rect key="frame" x="82" y="36" width="277" height="83"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r1h-it-N4E" secondAttribute="trailing" constant="20" symbolic="YES" id="3E2-i6-Pgt"/>
-                                                <constraint firstItem="liz-zJ-G7Y" firstAttribute="leading" secondItem="W6J-If-KZ7" secondAttribute="trailing" constant="13" id="4gy-Sh-Ow6"/>
-                                                <constraint firstItem="liz-zJ-G7Y" firstAttribute="top" secondItem="r1h-it-N4E" secondAttribute="bottom" constant="6" id="6tA-ZV-CCT"/>
                                                 <constraint firstItem="r1h-it-N4E" firstAttribute="top" secondItem="FCr-m2-6hV" secondAttribute="topMargin" constant="1" id="MJZ-P9-xNV"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="liz-zJ-G7Y" secondAttribute="bottom" constant="50" id="R67-Wj-bt1"/>
+                                                <constraint firstItem="rr5-Ns-sZp" firstAttribute="leading" secondItem="W6J-If-KZ7" secondAttribute="trailing" constant="20" id="QbL-Gh-tmT"/>
                                                 <constraint firstItem="r1h-it-N4E" firstAttribute="leading" secondItem="W6J-If-KZ7" secondAttribute="trailing" constant="20" id="SVU-fM-OA9"/>
                                                 <constraint firstItem="W6J-If-KZ7" firstAttribute="leading" secondItem="FCr-m2-6hV" secondAttribute="leading" constant="12" id="WSf-Pb-aUs"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="liz-zJ-G7Y" secondAttribute="trailing" constant="1" id="mNa-pc-JKS"/>
                                                 <constraint firstItem="W6J-If-KZ7" firstAttribute="top" secondItem="FCr-m2-6hV" secondAttribute="top" constant="12" id="rVI-d6-aSE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rr5-Ns-sZp" secondAttribute="trailing" constant="1" id="rwK-PQ-C7C"/>
+                                                <constraint firstItem="rr5-Ns-sZp" firstAttribute="top" secondItem="r1h-it-N4E" secondAttribute="bottom" constant="6" id="xNr-6y-oNI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rr5-Ns-sZp" secondAttribute="bottom" constant="50" id="xlr-Cl-YQQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ImageView" destination="W6J-If-KZ7" id="DWT-md-quE"/>
                                             <outlet property="NameTextLabel" destination="r1h-it-N4E" id="22Y-3y-bxH"/>
-                                            <outlet property="QuestionPreviewTextField" destination="liz-zJ-G7Y" id="UkY-yY-Wem"/>
+                                            <outlet property="QuestionPreviewTextField" destination="rr5-Ns-sZp" id="wTO-T1-Ats"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

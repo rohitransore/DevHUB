@@ -11,7 +11,8 @@ import UIKit
 class HomeTableViewCell: UITableViewCell
 {
     @IBOutlet weak var NameTextLabel: UILabel!
-    @IBOutlet weak var QuestionPreviewTextField: UITextView!
+    @IBOutlet weak var QuestionPreviewTextField: UILabel!
+    
     
     
     @IBOutlet weak var ImageView: UIImageView!
