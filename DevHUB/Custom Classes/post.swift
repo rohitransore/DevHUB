@@ -10,14 +10,16 @@ import Foundation
 
 class Post {
     var id:String
+    var pid:String
     var author:UserProfile
     var text:String
-    var timestamp:Double
+    var createdAt:Date
     
-    init(id:String, author:UserProfile,text:String,timestamp:Double) {
+    init(id:String, pid:String, author:UserProfile,text:String,timestamp:Double) {
         self.id = id
+        self.pid = pid
         self.author = author
         self.text = text
-        self.timestamp = timestamp
+        self.createdAt = Date(timeIntervalSince1970: timestamp / 1000)
     }
 }

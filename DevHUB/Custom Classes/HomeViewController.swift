@@ -9,12 +9,16 @@
 import UIKit
 import Firebase
 
+var myIndex = 0
+var posts = [Post]()
+var pid:String?
+
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts = [Post]()
+    
     
     
    override func viewDidLoad()
@@ -43,8 +47,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        //myIndex = indexPath.row
+        //setpid(post: posts[myIndex])
+        performSegue(withIdentifier: "ShowQuestionPage", sender: self)
+    }
+
     
     func observePosts() {
         let postsRef = Database.database().reference().child("posts")
@@ -54,6 +64,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             var tempPosts = [Post]()
             
+            
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                     let dict = childSnapshot.value as? [String:Any],
@@ -62,21 +73,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let username = author["username"] as? String,
                     //let photoURL = author["photoURL"] as? String,
                     //let url = URL(string:photoURL),
+                    let pid = dict["pid"] as? String,
                     let text = dict["text"] as? String,
                     let timestamp = dict["timestamp"] as? Double {
                     
                     let userProfile = UserProfile(uid: uid, username: username)
-                    let post = Post(id: childSnapshot.key, author: userProfile, text: text, timestamp:timestamp)
+                    let post = Post(id: childSnapshot.key, pid:pid, author: userProfile, text: text, timestamp:timestamp)
                     tempPosts.append(post)
+                    print(dict)
                 }
             }
             
-            self.posts = tempPosts
+            
+            posts = tempPosts
             self.tableView.reloadData()
             
         })
     }
     
+    @IBAction func HandleSignout(_ sender: Any)
+    {
+        try! Auth.auth().signOut()
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     
     

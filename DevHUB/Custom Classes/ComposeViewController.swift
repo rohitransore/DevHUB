@@ -11,7 +11,7 @@ import Firebase
 
 class ComposeViewController: UIViewController
 {
-    @IBOutlet weak var ImgView: UIImageView!
+    //@IBOutlet weak var ImgView: UIImageView!
     @IBOutlet weak var QuestionTextField: UITextView!
     
     
@@ -40,9 +40,12 @@ class ComposeViewController: UIViewController
         guard let userProfile = UserService.currentUserProfile else { return }
         // Firebase code here
         print("Runing")
-        let postRef = Database.database().reference().child("posts").childByAutoId()
+        let postRef = Database.database().reference().child("posts");
+        let key = postRef.childByAutoId().key
+        
         
         let postObject = [
+            "pid": key!,
             "author": [
                 "uid": userProfile.uid,
                 "username": userProfile.username
@@ -52,7 +55,8 @@ class ComposeViewController: UIViewController
             "timestamp": [".sv":"timestamp"]
             ] as [String:Any]
         
-        postRef.setValue(postObject, withCompletionBlock: { error, ref in
+        
+        postRef.child(key!).setValue(postObject, withCompletionBlock: { error, ref in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
             } else {

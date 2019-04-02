@@ -12,6 +12,7 @@ class HomeTableViewCell: UITableViewCell
 {
     @IBOutlet weak var NameTextLabel: UILabel!
     @IBOutlet weak var QuestionPreviewTextField: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     
     
@@ -30,7 +31,6 @@ class HomeTableViewCell: UITableViewCell
     override func setSelected(_ selected: Bool, animated: Bool)
     {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -38,7 +38,8 @@ class HomeTableViewCell: UITableViewCell
     {
         NameTextLabel.text = post.author.username
         QuestionPreviewTextField.text = post.text
+        subtitleLabel.text = post.createdAt.calenderTimeSinceNow()
         
-    }
+    } 
 
 }

@@ -8,7 +8,8 @@
 
 import Foundation
 
-class UserProfile {
+class UserProfile
+{
     var uid:String
     var username:String
     //var photoURL:URL
