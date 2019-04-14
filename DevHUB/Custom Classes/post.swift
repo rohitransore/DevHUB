@@ -23,3 +23,22 @@ class Post {
         self.createdAt = Date(timeIntervalSince1970: timestamp / 1000)
     }
 }
+
+class Replies
+{
+    var id: String
+    var author:ReplyUserProfile
+    var text:String
+    var createdAt:Date
+    
+    init(id:String, author:ReplyUserProfile,text:String,timestamp:Double)
+    {
+        self.id = id
+        self.author = author
+        self.text = text
+        self.createdAt = Date(timeIntervalSince1970: timestamp / 1000)
+    }
+
+    
+    
+}

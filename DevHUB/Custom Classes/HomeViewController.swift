@@ -11,7 +11,6 @@ import Firebase
 
 var myIndex = 0
 var posts = [Post]()
-var pid:String?
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
@@ -50,8 +49,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        //myIndex = indexPath.row
-        //setpid(post: posts[myIndex])
+        myIndex = indexPath.row
         performSegue(withIdentifier: "ShowQuestionPage", sender: self)
     }
 
@@ -59,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func observePosts() {
         let postsRef = Database.database().reference().child("posts")
         
-        print("Something")
+        //print("Something")
         postsRef.observe(.value, with: { snapshot in
             
             var tempPosts = [Post]()
@@ -80,7 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let userProfile = UserProfile(uid: uid, username: username)
                     let post = Post(id: childSnapshot.key, pid:pid, author: userProfile, text: text, timestamp:timestamp)
                     tempPosts.append(post)
-                    print(dict)
+                    //print(dict)
                 }
             }
             

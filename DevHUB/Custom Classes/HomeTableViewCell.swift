@@ -13,6 +13,7 @@ class HomeTableViewCell: UITableViewCell
     @IBOutlet weak var NameTextLabel: UILabel!
     @IBOutlet weak var QuestionPreviewTextField: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var PostIDTextLabel: UILabel!
     
     
     
@@ -39,7 +40,7 @@ class HomeTableViewCell: UITableViewCell
         NameTextLabel.text = post.author.username
         QuestionPreviewTextField.text = post.text
         subtitleLabel.text = post.createdAt.calenderTimeSinceNow()
-        
+        PostIDTextLabel.text = post.pid
     } 
 
 }

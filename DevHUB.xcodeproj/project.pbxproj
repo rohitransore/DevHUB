@@ -13,6 +13,7 @@
 		262AF3DD22532AA200D2458C /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AF3DC22532AA200D2458C /* HelperExtensions.swift */; };
 		262AF3DF2253515E00D2458C /* PostReplyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AF3DE2253515E00D2458C /* PostReplyClass.swift */; };
 		262AF3E12253519D00D2458C /* AllRepliesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AF3E02253519D00D2458C /* AllRepliesPage.swift */; };
+		2694AA872253F44C00974003 /* ARTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694AA862253F44C00974003 /* ARTableViewCell.swift */; };
 		26BE673921FF3ABF00BBC446 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE673821FF3ABF00BBC446 /* AppDelegate.swift */; };
 		26BE673B21FF3ABF00BBC446 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BE673A21FF3ABF00BBC446 /* ViewController.swift */; };
 		26BE673E21FF3ABF00BBC446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BE673C21FF3ABF00BBC446 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		262AF3DE2253515E00D2458C /* PostReplyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReplyClass.swift; sourceTree = "<group>"; };
 		262AF3E02253519D00D2458C /* AllRepliesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRepliesPage.swift; sourceTree = "<group>"; };
 		266E5EF1C98EE48627F1AE19 /* Pods_DevHUB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DevHUB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2694AA862253F44C00974003 /* ARTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTableViewCell.swift; sourceTree = "<group>"; };
 		26BE673521FF3ABF00BBC446 /* DevHUB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevHUB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BE673821FF3ABF00BBC446 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26BE673A21FF3ABF00BBC446 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				262AF3DC22532AA200D2458C /* HelperExtensions.swift */,
 				262AF3DE2253515E00D2458C /* PostReplyClass.swift */,
 				262AF3E02253519D00D2458C /* AllRepliesPage.swift */,
+				2694AA862253F44C00974003 /* ARTableViewCell.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				26BE673B21FF3ABF00BBC446 /* ViewController.swift in Sources */,
 				262AF3DD22532AA200D2458C /* HelperExtensions.swift in Sources */,
+				2694AA872253F44C00974003 /* ARTableViewCell.swift in Sources */,
 				26CDE076221E9CC30031F1ED /* QuestionPage.swift in Sources */,
 				2620BF97223B9AC300A415F9 /* UserService.swift in Sources */,
 				26F1BE142200B928005736BE /* HomeTableViewCell.swift in Sources */,

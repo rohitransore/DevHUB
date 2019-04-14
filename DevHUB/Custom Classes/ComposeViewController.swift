@@ -51,6 +51,7 @@ class ComposeViewController: UIViewController
                 "username": userProfile.username
                 
             ],
+            
             "text": QuestionTextField.text,
             "timestamp": [".sv":"timestamp"]
             ] as [String:Any]

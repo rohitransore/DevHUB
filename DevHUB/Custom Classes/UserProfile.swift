@@ -22,3 +22,16 @@ class UserProfile
        
     }
 }
+
+
+class ReplyUserProfile
+{
+    var username:String
+    
+    init(username:String)
+    {
+        //self.uid = uid
+        self.username = username
+    }
+    
+}
